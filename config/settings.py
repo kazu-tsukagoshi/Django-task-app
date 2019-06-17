@@ -149,9 +149,3 @@ if not DEBUG:
     django_heroku.settings(locals())
 
 DEBUG = True 
-
-TEMPLATE_DIRS = (os.path.join('kanban', 'templates'),)
-
-SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__)) 
-TEMPLATE_DIRS = (os.path.join(SETTINGS_PATH, 'templates'), 
-)

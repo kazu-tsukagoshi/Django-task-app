@@ -61,7 +61,7 @@ class ListDetailView(LoginRequiredMixin, DetailView):
 
 class ListUpdateView(LoginRequiredMixin, UpdateView):
     model = List
-    template_name = "kanban/Lists/update.html"
+    template_name = "kanban/lists/update.html"
     form_class = ListForm
     success_url = reverse_lazy("kanban:home")
     
