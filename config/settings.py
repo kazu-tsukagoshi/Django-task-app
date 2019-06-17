@@ -149,3 +149,7 @@ if not DEBUG:
     django_heroku.settings(locals())
 
 DEBUG = True 
+
+SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__)) 
+TEMPLATE_DIRS = (os.path.join(SETTINGS_PATH, 'templates'), 
+)
