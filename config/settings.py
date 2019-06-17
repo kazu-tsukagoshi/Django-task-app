@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's%8p#h_w9h(y%%4cg-$jf1ygy3siwy(k#8jycz#i1ltqk-aj+v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["kazu-django-app.herokuapp.com"]
 
