@@ -139,6 +139,8 @@ LOGOUT_REDIRECT_URL = "kanban:index"
 # ログインページ
 LOGIN_URL = "login"
 
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 DEBUG = False
@@ -152,5 +154,6 @@ if not DEBUG:
     import django_heroku
     django_heroku.settings(locals())
 
-DEBUG = True
+
+
 
