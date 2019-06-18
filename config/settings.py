@@ -40,11 +40,6 @@ INSTALLED_APPS = [
     'kanban.apps.KanbanConfig',
 ]
 
-MIDDLEWARE_CLASSES = (
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-)
 
 
 MIDDLEWARE = [
@@ -137,8 +132,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 LOGIN_REDIRECT_URL = "kanban:home"
 
 LOGOUT_REDIRECT_URL = "kanban:index"
@@ -146,40 +139,7 @@ LOGOUT_REDIRECT_URL = "kanban:index"
 # ログインページ
 LOGIN_URL = "login"
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        }
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        'testlogger': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        }
-    }
-}
 
-DEBUG_PROPAGATE_EXCEPTIONS = True
 
 DEBUG = False
 
@@ -192,5 +152,5 @@ if not DEBUG:
     import django_heroku
     django_heroku.settings(locals())
 
-
+DEBUG = True
 
